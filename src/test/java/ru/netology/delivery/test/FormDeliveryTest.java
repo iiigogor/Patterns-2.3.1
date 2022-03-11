@@ -38,12 +38,12 @@ public class FormDeliveryTest {
         var secondMeetingDate = generateDate(daysToAddForSecondMeeting);
         Faker faker = new Faker(new Locale("ru"));
 
-        $("[data-test-id=city] input").setValue(faker.address().cityName());
+        $("[data-test-id=city] input").setValue(DataGenerator.generateCity());
         $("[data-test-id=date] input").sendKeys(DataGenerator
                 .generateDate(daysToAddForFirstMeeting));
-        $("[data-test-id=name] input").setValue(faker.name().lastName() + " " + faker.name()
-                .firstName());
-        $("[data-test-id=phone] input").setValue(faker.phoneNumber().phoneNumber());
+        $("[data-test-id=name] input").setValue(DataGenerator.
+                generateName());
+        $("[data-test-id=phone] input").setValue(DataGenerator.generatePhone());
         $("[data-test-id=agreement]").click();
         $(".button__text").click();
         $("[data-test-id=success-notification]")

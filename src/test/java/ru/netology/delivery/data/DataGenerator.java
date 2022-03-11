@@ -10,11 +10,7 @@ public class DataGenerator {
     private DataGenerator() {
     }
 
-    private static Faker faker;
-
-    void setUpAll() {
-        faker = new Faker(new Locale("ru"));
-    }
+    private static Faker faker= new Faker(new Locale("ru")) ;
 
     public static String generateDate(int shift) {
 
@@ -28,7 +24,7 @@ public class DataGenerator {
     }
 
     public static String generateName() {
-        return faker.name().fullName();
+        return faker.name().lastName()+" "+faker.name().firstName();
     }
 
     public static String generatePhone() {
